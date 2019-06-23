@@ -1,0 +1,68 @@
+{
+  "_from": "generator-man",
+  "_id": "generator-man@1.3.2",
+  "_inBundle": false,
+  "_integrity": "sha512-posebhJBzxh3JsiicwGHveLTjOCG6/4TCw1+zinC/yAc/iLK2BLozDvJDrBzdQE5J6FubyD23TYE7dsYwaeNSQ==",
+  "_location": "/generator-man",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "generator-man",
+    "name": "generator-man",
+    "escapedName": "generator-man",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/generator-man/-/generator-man-1.3.2.tgz",
+  "_shasum": "df68c04184a220e0bf18fb89e8fc5d5543b485a1",
+  "_spec": "generator-man",
+  "_where": "/Users/scooterok/www/yo",
+  "author": {
+    "name": "Coderiver",
+    "email": "html@coderiver.com.ua",
+    "url": "riverco.de"
+  },
+  "bugs": {
+    "url": "https://github.com/coderiver/generator-man/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "lodash": "^4.17.11",
+    "mkdirp": "^0.5.1",
+    "string-length": "^1.0.1",
+    "update-notifier": "^1.0.2",
+    "yeoman-generator": "^2.0.5",
+    "yosay": "^1.2.0"
+  },
+  "deprecated": false,
+  "description": "Coderiver scaffolding",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "yeoman-assert": "^2.2.1"
+  },
+  "files": [
+    "generators"
+  ],
+  "homepage": "http://github.com/coderiver/generator-man",
+  "keywords": [
+    "yeoman-generator",
+    "coderiver",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "main": "generators/index.js",
+  "name": "generator-man",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderiver/generator-man.git"
+  },
+  "version": "1.3.2"
+}
