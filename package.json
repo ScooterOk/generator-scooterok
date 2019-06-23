@@ -1,16 +1,16 @@
 {
-  "_from": "generator-man",
-  "_id": "generator-man@1.3.2",
+  "_from": "generator-scooterok",
+  "_id": "generator-scooterok@1.0.0",
   "_inBundle": false,
   "_integrity": "sha512-posebhJBzxh3JsiicwGHveLTjOCG6/4TCw1+zinC/yAc/iLK2BLozDvJDrBzdQE5J6FubyD23TYE7dsYwaeNSQ==",
-  "_location": "/generator-man",
+  "_location": "/generator-scooterok",
   "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
-    "raw": "generator-man",
-    "name": "generator-man",
-    "escapedName": "generator-man",
+    "raw": "generator-scooterok",
+    "name": "generator-scooterok",
+    "escapedName": "generator-scooterok",
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
@@ -18,17 +18,13 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/generator-man/-/generator-man-1.3.2.tgz",
   "_shasum": "df68c04184a220e0bf18fb89e8fc5d5543b485a1",
-  "_spec": "generator-man",
+  "_spec": "generator-scooterok",
   "_where": "/Users/scooterok/www/yo",
   "author": {
     "name": "Coderiver",
     "email": "html@coderiver.com.ua",
     "url": "riverco.de"
-  },
-  "bugs": {
-    "url": "https://github.com/coderiver/generator-man/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -59,10 +55,10 @@
   ],
   "license": "MIT",
   "main": "generators/index.js",
-  "name": "generator-man",
+  "name": "generator-scooterok",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderiver/generator-man.git"
+    "url": "git+https://github.com/ScooterOk/generator-scooterok.git"
   },
-  "version": "1.3.2"
+  "version": "1.0.0"
 }
