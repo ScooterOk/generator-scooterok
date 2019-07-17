@@ -27,8 +27,7 @@ module.exports = function () {
   this.fs.copy(this.templatePath('eslintignore'), '.eslintignore');
   this.fs.copy(this.templatePath('htmlhintrc'), '.htmlhintrc');
   this.fs.copy(this.templatePath('sass-lint.yml'), '.sass-lint.yml');
-  this.fs.copy(this.templatePath('stylelintrc'), '.stylelintrc');
-  this.fs.copyTpl(this.templatePath('gulpfile.babel.js'), 'gulpfile.babel.js', props);
+  this.fs.copy(this.templatePath('stylelintrc'), '.stylelintrc');  
   this.fs.copy(this.templatePath('README.md'),'README.md');
   this.fs.copyTpl(this.templatePath('package.json'),'package.json', props);
 
@@ -41,9 +40,7 @@ module.exports = function () {
   // this.fs.copyTpl(this.templatePath('gulp/tasks/build.js'),'gulp/tasks/build.js', props);
   // this.fs.copyTpl(this.templatePath('gulp/tasks/watch.js'),'gulp/tasks/watch.js', props);
 
-  this.fs.copyTpl(this.templatePath('gulp/tasks/copy.js'),'gulp/tasks/copy.js', props);
-  this.fs.copy(this.templatePath('gulp/tasks/clean.js'),'gulp/tasks/clean.js');
-  this.fs.copy(this.templatePath('gulp/tasks/server.js'),'gulp/tasks/server.js');
+  this.fs.copy(this.templatePath('gulp/tasks/clean.js'),'gulp/tasks/clean.js');  
   
   if(props.preview){
     this.fs.copy(this.templatePath('gulp/tasks/index/index.html'),'gulp/tasks/index/index.html');
@@ -144,7 +141,7 @@ module.exports = function () {
   
   // copy directories
   // if (props.bundler === 'webpack') {
-    this.fs.copy(this.templatePath('src/js/app-webpack.js'), 'src/js/app.js');
+    
   // } else {
   //   this.fs.copy(this.templatePath('src/js/app.js'), 'src/js/app.js');
   //   this.fs.copy(this.templatePath('src/js/lib'), 'src/js/lib')
@@ -152,22 +149,46 @@ module.exports = function () {
   // }
 
   // if (props.bundler === 'webpack') {
-    this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
-    this.fs.copy(this.templatePath('src/js/lib/sayHello-webpack.js'), 'src/js/lib/sayHello.js');
-    this.fs.copy(this.templatePath('src/js/lib/detectTouch-webpack.js'), 'src/js/lib/detectTouch.js');
-    this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
+    // this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
+    // this.fs.copy(this.templatePath('src/js/lib/sayHello-webpack.js'), 'src/js/lib/sayHello.js');
+    // this.fs.copy(this.templatePath('src/js/lib/detectTouch-webpack.js'), 'src/js/lib/detectTouch.js');
+    // this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
   // }
   // else{
   //   this.fs.copy(this.templatePath('gulp/tasks/js.js'), 'gulp/tasks/js.js');
   //   this.fs.copy(this.templatePath('src/js/lib/sayHello.js'), 'src/js/lib/sayHello.js');
   //   this.fs.copy(this.templatePath('src/js/lib/detectTouch.js'), 'src/js/lib/detectTouch.js');
   // }
+
+
+  console.log('Scooter)Ok: '+props.bundler);
+
+  if (props.bundler === 'webpack') {
+    this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
+    this.fs.copy(this.templatePath('src/js/lib/sayHello-webpack.js'), 'src/js/lib/sayHello.js');
+    this.fs.copy(this.templatePath('src/js/lib/detectTouch-webpack.js'), 'src/js/lib/detectTouch.js');
+    this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
+    this.fs.copyTpl(this.templatePath('gulpfile-webpack/gulpfile.babel.js'), 'gulpfile.babel.js', props);
+    this.fs.copyTpl(this.templatePath('gulp/tasks/copy-webpack/copy.js'),'gulp/tasks/copy.js', props);
+    this.fs.copy(this.templatePath('gulp/tasks/server-webpack/server.js'),'gulp/tasks/server.js');
+    this.fs.copy(this.templatePath('src/js/app-webpack.js'), 'src/js/app.js');
+  }else{
+    this.fs.copy(this.templatePath('gulp/tasks/webpack.js'), 'gulp/tasks/webpack.js');
+    this.fs.copy(this.templatePath('webpack.config.js'),'webpack.config.js');
+    this.fs.copy(this.templatePath('src/js/lib/jquery.min.js'), 'src/js/lib/jquery.min.js');
+    this.fs.copyTpl(this.templatePath('gulpfile-manually/gulpfile.babel.js'), 'gulpfile.babel.js', props);
+    this.fs.copyTpl(this.templatePath('gulp/tasks/copy-manually/copy.js'),'gulp/tasks/copy.js', props);
+    this.fs.copy(this.templatePath('gulp/tasks/server-manually/server.js'),'gulp/tasks/server.js');
+    this.fs.copy(this.templatePath('src/js/app.js'), 'src/js/app.js');
+  }
+
+
   this.fs.copy(this.templatePath('babelrc'), '.babelrc');
 
   if (props.css === 'sass') {
     // this.directory('src/sass', 'src/sass');
     this.fs.copy(this.templatePath('src/sass'), 'src/sass');
-    this.fs.copyTpl(this.templatePath('src/sass/app.sass'), 'src/sass/app.sass',props);
+    this.fs.copyTpl(this.templatePath('src/sass/app.scss'), 'src/sass/app.scss',props);
   } else{
     this.fs.copy(this.templatePath('src/postcss'), 'src/sass');
     this.fs.copyTpl(this.templatePath('src/sass/app.sss'), 'src/sass/app.sss',props);

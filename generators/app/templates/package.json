@@ -46,7 +46,8 @@
     "htmlhint": "^0.11.0",
     "gulp-git": "^2.9.0",
     "lost": "^8.3.1",
-    "postcss-csso": "^3.0.0",
+    "postcss-csso": "^3.0.0",<% if (bundler === 'manually') { %>
+    "gulp-minify": "^3.1.0",<% } %>
     "gulp-postcss": "^8.0.0",<% if (css === 'postcss') { %>
     "gulp-sass-to-postcss-mixins": "0.0.3",
     "postcss": "^8.0.0",

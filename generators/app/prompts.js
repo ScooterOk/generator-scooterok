@@ -51,21 +51,21 @@ module.exports = [
     ],
     default: 0
   },
-  // {
-  //   type: 'list',
-  //   name: 'bundler',
-  //   message: 'Choose js modules bundler',
-  //   choices: [
-  //     {
-  //       name: 'Webpack',
-  //       value: 'webpack'
-  //     },
-  //     {
-  //       name: 'I will merge files manually.',
-  //       value: 'manually'
-  //     }
-  //   ]
-  // },
+  {
+    type: 'list',
+    name: 'bundler',
+    message: 'Choose js modules bundler',
+    choices: [
+      {
+        name: 'Webpack',
+        value: 'webpack'
+      },
+      {
+        name: 'I will merge files manually.',
+        value: 'manually'
+      }
+    ]
+  },
   {
     type: 'checkbox',
     name: 'sprites',
