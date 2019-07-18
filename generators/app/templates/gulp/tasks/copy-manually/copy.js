@@ -30,9 +30,13 @@ gulp.task('copy:lib', () => gulp
 );
 
 gulp.task('copy:js', () => gulp
-  .src(config.src.js + '/**/*.*')
+  .src(config.src.js + '/app.js')
   .pipe(minify())
   .pipe(gulp.dest(config.dest.js))
+);
+gulp.task('copy:lib', () => gulp
+  .src(config.src.js + '/lib/*.*')  
+  .pipe(gulp.dest(config.dest.js+'/lib'))
 );
 
 gulp.task('copy:rootfiles', () => gulp
@@ -40,8 +44,8 @@ gulp.task('copy:rootfiles', () => gulp
   .pipe(gulp.dest(config.dest.root))
 );
 
-const build = gulp => gulp.series('copy:img', 'copy:fonts', 'copy:js');
-const watch = gulp => () => gulp.watch([config.src.img + '/*', config.src.js + '/*'], gulp.parallel('copy:img', 'copy:fonts', 'copy:js'));
+const build = gulp => gulp.series('copy:img', 'copy:fonts', 'copy:js', 'copy:lib');
+const watch = gulp => () => gulp.watch([config.src.img + '/*', config.src.js + '/*'], gulp.parallel('copy:img', 'copy:fonts', 'copy:js', 'copy:lib'));
 
 module.exports.build = build;
 module.exports.watch = watch;
